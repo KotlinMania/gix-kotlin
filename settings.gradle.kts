@@ -17,3 +17,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "gix-kotlin"
+

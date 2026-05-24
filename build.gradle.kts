@@ -199,10 +199,18 @@ kotlin {
         binaries.framework { baseName = "Gix"; xcf.add(this) }
     }
     iosSimulatorArm64 {
-        binaries.framework { baseName = "Gix"; xcf.add(this) }
+        binaries.framework {
+            baseName = "Gix"
+            isStatic = true
+            xcf.add(this)
+        }
     }
     iosX64 {
-        binaries.framework { baseName = "Gix"; xcf.add(this) }
+        binaries.framework {
+            baseName = "Gix"
+            isStatic = true
+            xcf.add(this)
+        }
     }
 
     tvosArm64 {

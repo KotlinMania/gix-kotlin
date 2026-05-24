@@ -1,5 +1,4 @@
 {
-  "type": "port",
   "name": "gix-kotlin",
   "source": {
     "path": "tmp/gix/src",

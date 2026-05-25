@@ -283,7 +283,7 @@ docker build -f etc/docker/Dockerfile.alpine -t gitoxide:latest --compress . --t
 
 #### Basic usage in a Pipeline
 
-For example, if a `Dockerfile` currently uses something like `RUN git clone https://github.com/GitoxideLabs/gitoxide`, first build the image:
+For example, if a `Dockerfile` currently prepares Gitoxide sources before building, first build the image:
 
 ```sh
 docker build -f etc/docker/Dockerfile.alpine -t gitoxide:latest --compress .

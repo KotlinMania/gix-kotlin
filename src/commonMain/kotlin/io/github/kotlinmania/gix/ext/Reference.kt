@@ -1,4 +1,4 @@
-// port-lint: source gix/src/ext/reference.rs
+// port-lint: source ext/reference.rs
 package io.github.kotlinmania.gix.ext
 
 import io.github.kotlinmania.gix.Reference

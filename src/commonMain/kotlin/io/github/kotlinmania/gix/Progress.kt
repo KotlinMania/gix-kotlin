@@ -1,4 +1,4 @@
-// port-lint: source gix/src/progress.rs
+// port-lint: source progress.rs
 package io.github.kotlinmania.gix
 
 /**

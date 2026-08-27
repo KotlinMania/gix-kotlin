@@ -1,3 +1,4 @@
+// port-lint: source gix/src/id.rs
 package io.github.kotlinmania.gix.hash
 
 /**

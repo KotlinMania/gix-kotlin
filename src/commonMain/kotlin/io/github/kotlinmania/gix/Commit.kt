@@ -1,4 +1,4 @@
-// port-lint: source commit.rs
+// port-lint: source gix/src/commit.rs
 package io.github.kotlinmania.gix
 
 import io.github.kotlinmania.gix.hash.ObjectId

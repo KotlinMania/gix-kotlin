@@ -1,4 +1,4 @@
-// port-lint: source ext/rev_spec.rs
+// port-lint: source gix/src/ext/rev_spec.rs
 package io.github.kotlinmania.gix.ext
 
 import io.github.kotlinmania.gix.Repository

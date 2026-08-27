@@ -1,3 +1,4 @@
+// port-lint: tests gix/src/ext/object_id.rs gix/src/ext/reference.rs gix/src/ext/rev_spec.rs gix/src/ext/tree.rs
 package io.github.kotlinmania.gix
 
 import io.github.kotlinmania.gix.ext.attach

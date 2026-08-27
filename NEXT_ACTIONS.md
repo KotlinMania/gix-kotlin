@@ -8,9 +8,9 @@ Based on AST analysis, here are the concrete next steps.
 - **Function parity:** 20/1227 matched (target 99) — 1.6%
 - **Class/type parity:** 22/335 matched (target 152) — 6.6%
 - **Combined symbol parity:** 42/1562 matched (target 251) — 2.7%
-- **Average inline-code cosine:** 0.26 (function body across 25 matched files)
-- **Average documentation cosine:** 0.45 (doc text across 25 matched files)
-- **Cheat-zeroed Files:** 11
+- **Average inline-code cosine:** 0.25 (function body across 26 matched files)
+- **Average documentation cosine:** 0.45 (doc text across 26 matched files)
+- **Cheat-zeroed Files:** 10
 - **Critical Issues:** 23 files with <0.60 function similarity
 
 ## Priority 1: Fix Incomplete High-Dependency Files
@@ -80,7 +80,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/5 matched (target 6)
 - **Missing types:** `Sealed`, `TreeIterExt`, `TreeEntryRefExt`, `TreeEntryExt`, `TreeDiffChangeExt`
 
-### 4. gix.attribute_stack
+### 4. attribute_stack
 
 - **Target:** `gix.AttributeStack`
 - **Similarity:** 0.07
@@ -91,7 +91,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched
 - **Missing types:** `Target`
 
-### 5. gix.path
+### 5. path
 
 - **Target:** `gix.Path`
 - **Similarity:** 0.00
@@ -102,7 +102,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/0 matched (target 2)
 - **Missing types:** _none_
 
-### 6. gix.state
+### 6. state
 
 - **Target:** `gix.State [ZERO]`
 - **Similarity:** 0.00
@@ -113,7 +113,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/1 matched (target 2)
 - **Missing types:** _none_
 
-### 7. gix.id
+### 7. id
 
 - **Target:** `gix.Id`
 - **Similarity:** 0.11
@@ -136,7 +136,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched (target 0)
 - **Missing types:** `ReferenceExt`
 
-### 9. gix.progress
+### 9. progress
 
 - **Target:** `gix.Progress [ZERO]`
 - **Similarity:** 0.00
@@ -159,7 +159,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched
 - **Missing types:** `Error`
 
-### 11. gix.interrupt
+### 11. interrupt
 
 - **Target:** `gix.Interrupt`
 - **Similarity:** 0.12
@@ -170,7 +170,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/5 matched (target 2)
 - **Missing types:** `Deregister`, `AutoDeregister`, `Iter`, `Item`, `Read`
 
-### 12. gix.create
+### 12. create
 
 - **Target:** `gix.Create [ZERO]`
 - **Similarity:** 0.00
@@ -181,18 +181,18 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/5 matched (target 9)
 - **Missing types:** `Error`, `Kind`, `PathCursor`, `NewDir`, `Options`
 
-### 13. gix.lib
+### 13. lib
 
-- **Target:** `gix.Gix [STUB]`
-- **Similarity:** 0.00
+- **Target:** `gix.Gix`
+- **Similarity:** 0.11
 - **Dependents:** 0
-- **Priority Score:** 121510.0
+- **Priority Score:** 121508.9
 - **Functions:** 3/11 matched (target 8)
 - **Missing functions:** `discover_with_environment_overrides`, `open_with_environment_overrides`, `init_bare`, `prepare_clone_bare`, `prepare_clone`, `open_opts_with_git_binary_config`, `open_opts`, `is_dir_to_mode`
 - **Types:** 0/4 matched (target 9)
 - **Missing types:** `RefStore`, `OdbHandle`, `OdbHandleArc`, `Config`
 
-### 14. gix.commit
+### 14. commit
 
 - **Target:** `gix.Commit`
 - **Similarity:** 0.07
@@ -203,7 +203,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 2/4 matched (target 11)
 - **Missing types:** `Error`, `Platform`
 
-### 15. gix.filter
+### 15. filter
 
 - **Target:** `gix.Filter [ZERO]`
 - **Similarity:** 0.00
@@ -214,7 +214,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/2 matched (target 3)
 - **Missing types:** `Error`, `Pipeline`
 
-### 16. gix.discover
+### 16. discover
 
 - **Target:** `gix.Discover [ZERO]`
 - **Similarity:** 0.00
@@ -225,7 +225,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched (target 4)
 - **Missing types:** `Error`
 
-### 17. gix.types
+### 17. types
 
 - **Target:** `gix.Types`
 - **Similarity:** 0.00
@@ -236,7 +236,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 14/17 matched (target 16)
 - **Missing types:** `Id`, `Tree`, `AttributeStack`
 
-### 18. gix.env
+### 18. env
 
 - **Target:** `gix.Env`
 - **Similarity:** 0.13
@@ -247,7 +247,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched (target 12)
 - **Missing types:** `Error`
 
-### 19. gix.util
+### 19. util
 
 - **Target:** `gix.Util`
 - **Similarity:** 0.08
@@ -258,7 +258,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 1/2 matched
 - **Missing types:** `Target`
 
-### 20. gix.init
+### 20. init
 
 - **Target:** `gix.Init [ZERO]`
 - **Similarity:** 0.00
@@ -269,7 +269,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched (target 6)
 - **Missing types:** `Error`
 
-### 21. gix.shallow
+### 21. shallow
 
 - **Target:** `gix.Shallow [ZERO]`
 - **Similarity:** 0.00
@@ -291,7 +291,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched
 - **Missing types:** `RevSpecExt`
 
-### 23. gix.push
+### 23. push
 
 - **Target:** `gix.Push [ZERO]`
 - **Similarity:** 0.00
@@ -302,7 +302,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched (target 2)
 - **Missing types:** `Default`
 
-### 24. gix.tag
+### 24. tag
 
 - **Target:** `gix.Tag`
 - **Similarity:** 1.00
@@ -324,7 +324,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 0/1 matched (target 30)
 - **Missing types:** `Error`
 
-### 26. gix.mailmap
+### 26. mailmap
 
 - **Target:** `gix.Mailmap`
 - **Similarity:** 1.00
@@ -346,7 +346,7 @@ Every matched file is listed below with function and type symbol parity.
 - **Types:** 3/3 matched
 - **Missing types:** _none_
 
-### 28. gix.prelude
+### 28. prelude
 
 - **Target:** `gix.Prelude [STUB]`
 - **Similarity:** 1.00

@@ -1,4 +1,4 @@
-// port-lint: source gix/src/filter.rs
+// port-lint: source filter.rs
 package io.github.kotlinmania.gix
 
 /**

@@ -1,4 +1,4 @@
-// port-lint: source gix/src/mailmap.rs
+// port-lint: source mailmap.rs
 package io.github.kotlinmania.gix
 
 /**

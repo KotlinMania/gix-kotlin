@@ -1,4 +1,4 @@
-// port-lint: source gix/src/discover.rs
+// port-lint: source discover.rs
 package io.github.kotlinmania.gix
 
 /**

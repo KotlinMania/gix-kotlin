@@ -11,13 +11,37 @@ val NO_PARENT_IDS: List<ObjectId> = emptyList()
 /**
  * Error returned by commit operations on a repository.
  */
-sealed class CommitError(message: String, cause: Throwable? = null) : Exception(message, cause) {
-    class ParseTime(message: String, cause: Throwable? = null) : CommitError(message, cause)
-    class CommitterMissing(message: String = "Committer identity is not configured") : CommitError(message)
-    class AuthorMissing(message: String = "Author identity is not configured") : CommitError(message)
-    class ReferenceNameValidation(message: String, cause: Throwable? = null) : CommitError(message, cause)
-    class WriteObject(message: String, cause: Throwable? = null) : CommitError(message, cause)
-    class ReferenceEdit(message: String, cause: Throwable? = null) : CommitError(message, cause)
+sealed class CommitError(
+    message: String,
+    cause: Throwable? = null,
+) : Exception(message, cause) {
+    class ParseTime(
+        message: String,
+        cause: Throwable? = null,
+    ) : CommitError(message, cause)
+
+    class CommitterMissing(
+        message: String = "Committer identity is not configured",
+    ) : CommitError(message)
+
+    class AuthorMissing(
+        message: String = "Author identity is not configured",
+    ) : CommitError(message)
+
+    class ReferenceNameValidation(
+        message: String,
+        cause: Throwable? = null,
+    ) : CommitError(message, cause)
+
+    class WriteObject(
+        message: String,
+        cause: Throwable? = null,
+    ) : CommitError(message, cause)
+
+    class ReferenceEdit(
+        message: String,
+        cause: Throwable? = null,
+    ) : CommitError(message, cause)
 }
 
 /**

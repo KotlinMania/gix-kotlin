@@ -6,7 +6,9 @@ import io.github.kotlinmania.gix.hash.ObjectId
 /**
  * Git file and object mode within a tree entry.
  */
-enum class EntryMode(val octalMode: Int) {
+enum class EntryMode(
+    val octalMode: Int,
+) {
     Tree(16384), // 0o040000
     Blob(33188), // 0o100644
     BlobExecutable(33261), // 0o100755

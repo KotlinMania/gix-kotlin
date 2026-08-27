@@ -18,12 +18,28 @@ data class ShallowCommits(
  * Errors relating to shallow repository reading and writing.
  */
 object Shallow {
-    sealed class ReadError(message: String, cause: Throwable? = null) : Exception(message, cause) {
-        class Io(message: String, cause: Throwable? = null) : ReadError(message, cause)
-        class Parse(message: String, cause: Throwable? = null) : ReadError(message, cause)
+    sealed class ReadError(
+        message: String,
+        cause: Throwable? = null,
+    ) : Exception(message, cause) {
+        class Io(
+            message: String,
+            cause: Throwable? = null,
+        ) : ReadError(message, cause)
+
+        class Parse(
+            message: String,
+            cause: Throwable? = null,
+        ) : ReadError(message, cause)
     }
 
-    sealed class WriteError(message: String, cause: Throwable? = null) : Exception(message, cause) {
-        class Io(message: String, cause: Throwable? = null) : WriteError(message, cause)
+    sealed class WriteError(
+        message: String,
+        cause: Throwable? = null,
+    ) : Exception(message, cause) {
+        class Io(
+            message: String,
+            cause: Throwable? = null,
+        ) : WriteError(message, cause)
     }
 }

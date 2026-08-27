@@ -49,7 +49,7 @@ class Object(
 
     override fun hashCode(): Int = id.hashCode() * 31 + kind.hashCode()
 
-    override fun toString(): String = "${kind}(${id.toHex()})"
+    override fun toString(): String = "$kind(${id.toHex()})"
 }
 
 /**
@@ -109,7 +109,7 @@ data class ObjectDetached(
 
     override fun hashCode(): Int = id.hashCode() * 31 + kind.hashCode()
 
-    override fun toString(): String = "${kind}(${id.toHex()})"
+    override fun toString(): String = "$kind(${id.toHex()})"
 }
 
 /**

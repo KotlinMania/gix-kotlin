@@ -19,15 +19,49 @@ object Env {
         /**
          * An error combining failure modes when opening a repository, finding remotes, and fetching.
          */
-        sealed class FetchError(message: String, cause: Throwable? = null) : Exception(message, cause) {
-            class Open(message: String, cause: Throwable? = null) : FetchError(message, cause)
-            class FindExistingReference(message: String, cause: Throwable? = null) : FetchError(message, cause)
-            class RemoteInit(message: String, cause: Throwable? = null) : FetchError(message, cause)
-            class FindExistingRemote(message: String, cause: Throwable? = null) : FetchError(message, cause)
-            class Connect(message: String, cause: Throwable? = null) : FetchError(message, cause)
-            class PrepareFetch(message: String, cause: Throwable? = null) : FetchError(message, cause)
-            class Fetch(message: String, cause: Throwable? = null) : FetchError(message, cause)
-            class Other(message: String, cause: Throwable? = null) : FetchError(message, cause)
+        sealed class FetchError(
+            message: String,
+            cause: Throwable? = null,
+        ) : Exception(message, cause) {
+            class Open(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
+
+            class FindExistingReference(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
+
+            class RemoteInit(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
+
+            class FindExistingRemote(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
+
+            class Connect(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
+
+            class PrepareFetch(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
+
+            class Fetch(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
+
+            class Other(
+                message: String,
+                cause: Throwable? = null,
+            ) : FetchError(message, cause)
 
             fun isSpurious(): Boolean =
                 when (this) {

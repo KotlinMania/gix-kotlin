@@ -22,11 +22,35 @@ data class CreateOptions(
 /**
  * Error returned during repository creation.
  */
-sealed class CreateError(message: String, cause: Throwable? = null) : Exception(message, cause) {
-    class CurrentDir(message: String, cause: Throwable? = null) : CreateError(message, cause)
-    class IoOpen(message: String, cause: Throwable? = null) : CreateError(message, cause)
-    class IoWrite(message: String, cause: Throwable? = null) : CreateError(message, cause)
-    class DirectoryExists(message: String) : CreateError(message)
-    class DirectoryNotEmpty(message: String) : CreateError(message)
-    class CreateDirectory(message: String, cause: Throwable? = null) : CreateError(message, cause)
+sealed class CreateError(
+    message: String,
+    cause: Throwable? = null,
+) : Exception(message, cause) {
+    class CurrentDir(
+        message: String,
+        cause: Throwable? = null,
+    ) : CreateError(message, cause)
+
+    class IoOpen(
+        message: String,
+        cause: Throwable? = null,
+    ) : CreateError(message, cause)
+
+    class IoWrite(
+        message: String,
+        cause: Throwable? = null,
+    ) : CreateError(message, cause)
+
+    class DirectoryExists(
+        message: String,
+    ) : CreateError(message)
+
+    class DirectoryNotEmpty(
+        message: String,
+    ) : CreateError(message)
+
+    class CreateDirectory(
+        message: String,
+        cause: Throwable? = null,
+    ) : CreateError(message, cause)
 }

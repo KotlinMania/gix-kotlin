@@ -50,7 +50,9 @@ class ObjectId private constructor(
         return rawBytes.size.compareTo(other.rawBytes.size)
     }
 
-    enum class Kind(val byteSize: Int) {
+    enum class Kind(
+        val byteSize: Int,
+    ) {
         Sha1(20),
         Sha256(32),
     }

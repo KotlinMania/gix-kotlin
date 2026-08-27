@@ -31,7 +31,10 @@ interface Progress {
  */
 object DiscardProgress : Progress {
     override fun init(max: Int?) {}
+
     override fun inc(step: Int) {}
+
     override fun set(step: Int) {}
+
     override fun done() {}
 }

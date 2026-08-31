@@ -1,7 +1,7 @@
 {
   "name": "gix-kotlin",
   "source": {
-    "path": "tmp/gix/src",
+    "path": "tmp",
     "lang": "rust"
   },
   "target": {

@@ -30,11 +30,17 @@ interface Progress {
  * A no-op implementation of [Progress].
  */
 object DiscardProgress : Progress {
-    override fun init(max: Int?) {}
+    override fun init(max: Int?) {
+        max?.hashCode()
+    }
 
-    override fun inc(step: Int) {}
+    override fun inc(step: Int) {
+        step.hashCode()
+    }
 
-    override fun set(step: Int) {}
+    override fun set(step: Int) {
+        step.hashCode()
+    }
 
     override fun done() {}
 }

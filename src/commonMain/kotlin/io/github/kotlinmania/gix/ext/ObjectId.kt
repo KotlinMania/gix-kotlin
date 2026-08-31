@@ -1,4 +1,4 @@
-// port-lint: source ext/object_id.rs
+// port-lint: source gix/src/ext/object_id.rs
 package io.github.kotlinmania.gix.ext
 
 import io.github.kotlinmania.gix.Id

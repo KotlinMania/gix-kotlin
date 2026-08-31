@@ -1,4 +1,4 @@
-// port-lint: source object/mod.rs
+// port-lint: source gix/src/object/mod.rs
 package io.github.kotlinmania.gix.objs
 
 /**

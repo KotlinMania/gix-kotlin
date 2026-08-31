@@ -1,4 +1,4 @@
-// port-lint: source shallow.rs
+// port-lint: source gix/src/shallow.rs
 package io.github.kotlinmania.gix
 
 import io.github.kotlinmania.gix.hash.ObjectId

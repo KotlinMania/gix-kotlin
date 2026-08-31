@@ -1,4 +1,4 @@
-// port-lint: tests push.rs
+// port-lint: tests gix/src/push.rs
 package io.github.kotlinmania.gix
 
 import kotlin.test.Test

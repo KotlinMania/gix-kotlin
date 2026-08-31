@@ -1,4 +1,4 @@
-// port-lint: source revision/spec/parse/types.rs
+// port-lint: source gix/src/revision/spec/parse/types.rs
 package io.github.kotlinmania.gix.revision.spec.parse
 
 /**

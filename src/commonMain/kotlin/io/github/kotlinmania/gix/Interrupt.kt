@@ -1,4 +1,4 @@
-// port-lint: source interrupt.rs
+// port-lint: source gix/src/interrupt.rs
 package io.github.kotlinmania.gix
 
 /**

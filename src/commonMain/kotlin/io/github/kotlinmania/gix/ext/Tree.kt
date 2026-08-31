@@ -1,4 +1,4 @@
-// port-lint: source ext/tree.rs
+// port-lint: source gix/src/ext/tree.rs
 package io.github.kotlinmania.gix.ext
 
 import io.github.kotlinmania.gix.Repository

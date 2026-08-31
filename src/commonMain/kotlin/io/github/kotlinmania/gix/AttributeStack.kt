@@ -1,4 +1,4 @@
-// port-lint: source attribute_stack.rs
+// port-lint: source gix/src/attribute_stack.rs
 package io.github.kotlinmania.gix
 
 /**

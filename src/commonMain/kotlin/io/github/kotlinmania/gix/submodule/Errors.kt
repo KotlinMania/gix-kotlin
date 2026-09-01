@@ -1,4 +1,4 @@
-// port-lint: source gix/src/submodule/errors.rs
+// port-lint: source submodule/errors.rs
 package io.github.kotlinmania.gix.submodule
 
 /**

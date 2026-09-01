@@ -1,4 +1,4 @@
-// port-lint: source gix/src/revision/spec/parse/error.rs
+// port-lint: source revision/spec/parse/error.rs
 package io.github.kotlinmania.gix.revision.spec.parse
 
 import io.github.kotlinmania.gix.hash.ObjectId

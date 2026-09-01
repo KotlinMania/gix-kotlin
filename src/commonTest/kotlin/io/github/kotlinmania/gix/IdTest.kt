@@ -1,4 +1,4 @@
-// port-lint: tests gix/src/id.rs
+// port-lint: tests id.rs
 package io.github.kotlinmania.gix
 
 import io.github.kotlinmania.gix.hash.ObjectId

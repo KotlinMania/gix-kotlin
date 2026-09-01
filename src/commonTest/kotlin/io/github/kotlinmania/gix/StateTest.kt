@@ -1,4 +1,4 @@
-// port-lint: tests gix/src/state.rs
+// port-lint: tests state.rs
 package io.github.kotlinmania.gix
 
 import kotlin.test.Test

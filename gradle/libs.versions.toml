@@ -15,6 +15,12 @@ serde = "0.1.10"
 anyhow = "0.1.1"
 prettyAssertions = "0.1.0"
 serialTest = "0.1.0"
+kmIo = "0.1.5"
+sha1 = "0.1.1"
+sha2 = "0.1.0"
+bitflags = "0.1.1"
+tempfile = "0.1.0"
+tracing = "0.1.0"
 
 [plugins]
 kotlin-multiplatform = { id = "org.jetbrains.kotlin.multiplatform", version.ref = "kotlin" }
@@ -39,6 +45,10 @@ serde-kotlin = { module = "io.github.kotlinmania:serde-kotlin", version.ref = "s
 anyhow-kotlin = { module = "io.github.kotlinmania:anyhow-kotlin", version.ref = "anyhow" }
 pretty-assertions-kotlin = { module = "io.github.kotlinmania:pretty-assertions-kotlin", version.ref = "prettyAssertions" }
 serial-test-kotlin = { module = "io.github.kotlinmania:serial-test-kotlin", version.ref = "serialTest" }
+km-io = { module = "io.github.kotlinmania:km-io", version.ref = "kmIo" }
+sha2-kotlin = { module = "io.github.kotlinmania:sha2-kotlin", version.ref = "sha2" }
+bitflags-kotlin = { module = "io.github.kotlinmania:bitflags-kotlin", version.ref = "bitflags" }
+tempfile-kotlin = { module = "io.github.kotlinmania:tempfile-kotlin", version.ref = "tempfile" }
 
 [bundles]
 gix-commonMain = [
@@ -50,6 +60,10 @@ gix-commonMain = [
   "thiserror-kotlin",
   "regex-kotlin",
   "serde-kotlin",
+  "km-io",
+  "sha2-kotlin",
+  "bitflags-kotlin",
+  "tempfile-kotlin",
 ]
 gix-commonTest = [
   "anyhow-kotlin",

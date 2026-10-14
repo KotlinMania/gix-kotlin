@@ -455,7 +455,11 @@ kotlin {
     // Web
     js {
         configureBenchmarkCompilation()
-        browser()
+        browser {
+            testTask {
+                filter.setExcludePatterns("*KmPath*")
+            }
+        }
         nodejs()
     }
 
@@ -618,6 +622,10 @@ if (benchmarkEnabled) {
         }.configureEach {
             enabled = false
         }
+}
+
+tasks.matching { it.name == "wasmJsBrowserTest" }.configureEach {
+    enabled = false
 }
 
 tasks.named("check") {

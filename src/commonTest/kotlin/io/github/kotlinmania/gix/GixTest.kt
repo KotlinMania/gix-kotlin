@@ -45,6 +45,14 @@ class GixTest {
     }
 
     @Test
+    fun testObjectIdHashSha256() {
+        val data = "abc".encodeToByteArray()
+        val oid = ObjectId.hashSha256(data)
+        assertEquals("ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad", oid.toHex())
+        assertEquals(ObjectId.Kind.Sha256, oid.kind)
+    }
+
+    @Test
     fun testEntryMode() {
         assertEquals(EntryKind.Blob, EntryMode.Blob.kind)
         assertEquals(EntryKind.BlobExecutable, EntryMode.BlobExecutable.kind)

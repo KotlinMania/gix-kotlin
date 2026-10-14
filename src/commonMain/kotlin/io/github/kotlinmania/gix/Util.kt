@@ -1,25 +1,25 @@
 // port-lint: source util.rs
 package io.github.kotlinmania.gix
 
+import kotlin.concurrent.atomics.AtomicBoolean
+import kotlin.concurrent.atomics.ExperimentalAtomicApi
+
 /**
  * An atomic boolean flag representation that can be shared or owned.
  */
+@OptIn(ExperimentalAtomicApi::class)
 class OwnedOrStaticAtomicBool(
-    private var flag: Boolean = false,
+    private val flag: AtomicBoolean = AtomicBoolean(false),
 ) {
-    fun get(): Boolean = flag
+    fun get(): Boolean = flag.load()
 
     fun set(value: Boolean) {
-        flag = value
+        flag.store(value)
     }
 
-    fun swap(value: Boolean): Boolean {
-        val prev = flag
-        flag = value
-        return prev
-    }
+    fun swap(value: Boolean): Boolean = flag.exchange(value)
 
     companion object {
-        fun default(): OwnedOrStaticAtomicBool = OwnedOrStaticAtomicBool(false)
+        fun default(): OwnedOrStaticAtomicBool = OwnedOrStaticAtomicBool(AtomicBoolean(false))
     }
 }

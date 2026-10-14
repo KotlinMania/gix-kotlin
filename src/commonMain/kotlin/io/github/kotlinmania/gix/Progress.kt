@@ -8,7 +8,7 @@ interface Progress {
     /**
      * Initializes step count for an operation.
      */
-    fun init(max: Int? = null)
+    fun initialize(max: Int? = null)
 
     /**
      * Increments the step count by [step].
@@ -30,7 +30,7 @@ interface Progress {
  * A no-op implementation of [Progress].
  */
 object DiscardProgress : Progress {
-    override fun init(max: Int?) {
+    override fun initialize(max: Int?) {
         max?.hashCode()
     }
 

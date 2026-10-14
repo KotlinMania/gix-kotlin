@@ -7,6 +7,8 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class IdTest {
+    // sizeOfOid: unported because std::mem::size_of is a Rust memory layout semantic without Kotlin equivalent
+
     @Test
     fun testIdShorten() {
         val repo = Gix.open("/tmp/repo")

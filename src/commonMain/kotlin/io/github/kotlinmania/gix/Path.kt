@@ -1,10 +1,22 @@
 // port-lint: source path.rs
 package io.github.kotlinmania.gix
 
+import io.github.kotlinmania.io.files.Path as KmPath
+
 /**
  * Path utilities for Git repositories and working trees.
  */
 object Path {
+    /**
+     * Creates an [io.github.kotlinmania.io.Path] from [path].
+     */
+    fun of(path: String): KmPath = KmPath(path)
+
+    /**
+     * Creates an [io.github.kotlinmania.io.Path] by combining [base] and child [parts].
+     */
+    fun of(base: String, vararg parts: String): KmPath = KmPath(base, *parts)
+
     /**
      * Normalizes a repository-relative or absolute file path by resolving '.' and '..' components.
      */

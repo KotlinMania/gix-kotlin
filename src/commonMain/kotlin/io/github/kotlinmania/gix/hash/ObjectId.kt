@@ -1,6 +1,8 @@
 // port-lint: source id.rs
 package io.github.kotlinmania.gix.hash
 
+import io.github.kotlinmania.sha2.Sha256
+
 /**
  * An object identifier representing a Git SHA-1 (20 bytes) or SHA-256 (32 bytes) hash.
  */
@@ -84,6 +86,11 @@ class ObjectId private constructor(
         fun nullSha1(): ObjectId = ObjectId(ByteArray(20))
 
         fun nullSha256(): ObjectId = ObjectId(ByteArray(32))
+
+        /**
+         * Creates an [ObjectId] by computing the SHA-256 hash of [data].
+         */
+        fun hashSha256(data: ByteArray): ObjectId = ObjectId(Sha256.digest(data))
 
         private fun parseHexNibble(c: Char): Int =
             when (c) {

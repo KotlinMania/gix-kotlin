@@ -1,6 +1,7 @@
 // port-lint: source id.rs
 package io.github.kotlinmania.gix.hash
 
+import io.github.kotlinmania.sha1.Sha1
 import io.github.kotlinmania.sha2.Sha256
 
 /**
@@ -86,6 +87,11 @@ class ObjectId private constructor(
         fun nullSha1(): ObjectId = ObjectId(ByteArray(20))
 
         fun nullSha256(): ObjectId = ObjectId(ByteArray(32))
+
+        /**
+         * Creates an [ObjectId] by computing the SHA-1 hash of [data].
+         */
+        fun hashSha1(data: ByteArray): ObjectId = ObjectId(Sha1.digest(data))
 
         /**
          * Creates an [ObjectId] by computing the SHA-256 hash of [data].

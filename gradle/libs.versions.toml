@@ -16,7 +16,7 @@ anyhow = "0.1.1"
 prettyAssertions = "0.1.0"
 serialTest = "0.1.0"
 kmIo = "0.1.5"
-sha1 = "0.1.1"
+sha1 = "0.1.2"
 sha2 = "0.1.0"
 bitflags = "0.1.1"
 tempfile = "0.1.0"
@@ -46,6 +46,7 @@ anyhow-kotlin = { module = "io.github.kotlinmania:anyhow-kotlin", version.ref = 
 pretty-assertions-kotlin = { module = "io.github.kotlinmania:pretty-assertions-kotlin", version.ref = "prettyAssertions" }
 serial-test-kotlin = { module = "io.github.kotlinmania:serial-test-kotlin", version.ref = "serialTest" }
 km-io = { module = "io.github.kotlinmania:km-io", version.ref = "kmIo" }
+sha1-kotlin = { module = "io.github.kotlinmania:sha1-kotlin", version.ref = "sha1" }
 sha2-kotlin = { module = "io.github.kotlinmania:sha2-kotlin", version.ref = "sha2" }
 bitflags-kotlin = { module = "io.github.kotlinmania:bitflags-kotlin", version.ref = "bitflags" }
 tempfile-kotlin = { module = "io.github.kotlinmania:tempfile-kotlin", version.ref = "tempfile" }
@@ -61,6 +62,7 @@ gix-commonMain = [
   "regex-kotlin",
   "serde-kotlin",
   "km-io",
+  "sha1-kotlin",
   "sha2-kotlin",
   "bitflags-kotlin",
   "tempfile-kotlin",

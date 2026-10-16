@@ -28,7 +28,10 @@ object Path {
 
         for (part in parts) {
             when {
-                part.isEmpty() || part == "." -> continue
+                part.isEmpty() || part == "." -> {
+                    continue
+                }
+
                 part == ".." -> {
                     if (stack.isNotEmpty() && stack.last() != "..") {
                         stack.removeAt(stack.size - 1)
@@ -36,7 +39,10 @@ object Path {
                         stack.add(part)
                     }
                 }
-                else -> stack.add(part)
+
+                else -> {
+                    stack.add(part)
+                }
             }
         }
 

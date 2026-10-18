@@ -489,7 +489,7 @@ at your option.
 
 ```kotlin
 dependencies {
-    implementation("io.github.kotlinmania:gix-kotlin:0.1.0")
+    implementation("io.github.kotlinmania:gix-kotlin:0.2.1")
 }
 ```
 

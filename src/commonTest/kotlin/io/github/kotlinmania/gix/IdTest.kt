@@ -7,7 +7,7 @@ import kotlin.test.assertEquals
 import kotlin.test.assertTrue
 
 class IdTest {
-    // sizeOfOid: unported because std::mem::size_of is a Rust memory layout semantic without Kotlin equivalent
+    // sizeOfOid: unported because memory layout sizing is a Rust semantic without Kotlin equivalent
 
     @Test
     fun testIdShorten() {
@@ -23,5 +23,24 @@ class IdTest {
 
         val id2 = Id(ObjectId.fromHex("0000000000000000000000000000000000000000"), repo)
         assertTrue(id > id2)
+    }
+
+    @Test
+    fun testIdOperations() {
+        val repo = Gix.open("/tmp/repo")
+        val oid = ObjectId.fromHex("e69de29bb2d1d6434b8b29ae775ad8c2e48c5391")
+        val id = Id(oid, repo)
+
+        assertEquals(oid, id.deref())
+        assertEquals(oid, id.asRef())
+        assertEquals(oid, Id.from(id))
+        assertEquals(listOf(oid), id.ancestors())
+        assertEquals(null, id.`object`())
+        assertEquals(null, id.tryObject())
+        assertEquals(null, id.header())
+        assertEquals(null, id.tryHeader())
+
+        val hexLen = Id.calculateAutoHexLen(100uL)
+        assertTrue(hexLen >= 7)
     }
 }

@@ -4,42 +4,44 @@ package io.github.kotlinmania.gix
 import io.github.kotlinmania.gix.hash.ObjectId
 
 /**
- * A list of commits at the shallow boundary behind which no commits are available.
+ * Storage for shallow commit boundary snapshots.
  */
-data class ShallowCommits(
-    val commits: List<ObjectId> = emptyList(),
-) {
-    fun isEmpty(): Boolean = commits.isEmpty()
+typealias CommitsStorage = List<ObjectId>
 
-    fun contains(id: ObjectId): Boolean = commits.contains(id)
-}
+/**
+ * A lazily loaded and auto-updated list of commits which are at the shallow boundary (behind which there are no commits available),
+ * sorted to allow bisecting.
+ */
+data class Commits(
+    val commits: List<ObjectId> = emptyList(),
+)
 
 /**
  * Errors relating to shallow repository reading and writing.
  */
 object Shallow {
     sealed class ReadError(
-        message: String,
-        cause: Throwable? = null,
-    ) : Exception(message, cause) {
+        val message: String,
+        val cause: String? = null,
+    ) {
         class Io(
             message: String,
-            cause: Throwable? = null,
+            cause: String? = null,
         ) : ReadError(message, cause)
 
         class Parse(
             message: String,
-            cause: Throwable? = null,
+            cause: String? = null,
         ) : ReadError(message, cause)
     }
 
     sealed class WriteError(
-        message: String,
-        cause: Throwable? = null,
-    ) : Exception(message, cause) {
+        val message: String,
+        val cause: String? = null,
+    ) {
         class Io(
             message: String,
-            cause: Throwable? = null,
+            cause: String? = null,
         ) : WriteError(message, cause)
     }
 }

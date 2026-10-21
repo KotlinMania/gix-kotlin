@@ -55,6 +55,11 @@ object Path {
     }
 
     /**
+     * Returns the installation directory of the current executable.
+     */
+    fun installDir(): String? = null
+
+    /**
      * Combines base path and child path components.
      */
     fun join(base: String, child: String): String {

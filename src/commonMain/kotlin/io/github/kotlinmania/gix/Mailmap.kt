@@ -6,27 +6,27 @@ package io.github.kotlinmania.gix
  */
 object Mailmap {
     sealed class LoadError(
-        message: String,
-        cause: Throwable? = null,
-    ) : Exception(message, cause) {
+        open val message: String,
+        open val cause: String? = null,
+    ) {
         class Io(
-            message: String,
-            cause: Throwable? = null,
+            override val message: String,
+            override val cause: String? = null,
         ) : LoadError(message, cause)
 
         class BlobSpec(
-            message: String,
-            cause: Throwable? = null,
+            override val message: String,
+            override val cause: String? = null,
         ) : LoadError(message, cause)
 
         class PathInterpolate(
-            message: String,
-            cause: Throwable? = null,
+            override val message: String,
+            override val cause: String? = null,
         ) : LoadError(message, cause)
 
         class FindExisting(
-            message: String,
-            cause: Throwable? = null,
+            override val message: String,
+            override val cause: String? = null,
         ) : LoadError(message, cause)
     }
 }

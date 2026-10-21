@@ -5,26 +5,26 @@ package io.github.kotlinmania.gix
  * Error returned by tag operations on a repository.
  */
 sealed class TagError(
-    message: String,
-    cause: Throwable? = null,
-) : Exception(message, cause) {
+    open val message: String,
+    open val cause: String? = null,
+) {
     class ReferenceNameValidation(
-        message: String,
-        cause: Throwable? = null,
+        override val message: String,
+        override val cause: String? = null,
     ) : TagError(message, cause)
 
     class WriteObject(
-        message: String,
-        cause: Throwable? = null,
+        override val message: String,
+        override val cause: String? = null,
     ) : TagError(message, cause)
 
     class ReferenceEdit(
-        message: String,
-        cause: Throwable? = null,
+        override val message: String,
+        override val cause: String? = null,
     ) : TagError(message, cause)
 
     class DateParseError(
-        message: String,
-        cause: Throwable? = null,
+        override val message: String,
+        override val cause: String? = null,
     ) : TagError(message, cause)
 }

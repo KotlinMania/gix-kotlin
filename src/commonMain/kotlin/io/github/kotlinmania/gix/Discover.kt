@@ -5,8 +5,13 @@ package io.github.kotlinmania.gix
  * The error returned by repository discovery.
  */
 sealed class DiscoverError {
-    data class Discover(val message: String) : DiscoverError()
-    data class Open(val message: String) : DiscoverError()
+    data class Discover(
+        val message: String,
+    ) : DiscoverError()
+
+    data class Open(
+        val message: String,
+    ) : DiscoverError()
 }
 
 /**
@@ -35,7 +40,7 @@ fun discoverOpts(
     directory: String,
     options: Discover.Options = Discover.Options(),
 ): ThreadSafeRepository {
-    var current: String? = directory
+    val current: String? = directory
     while (current != null) {
         val gitDir = Path.join(current, ".git")
         val repo = ThreadSafeRepository(workTree = current, gitDir = gitDir, isBare = false)

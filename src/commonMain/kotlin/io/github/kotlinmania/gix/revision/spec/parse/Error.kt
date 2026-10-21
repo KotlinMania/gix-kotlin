@@ -73,28 +73,33 @@ enum class Order {
  * Formats an ambiguity error message for candidate object IDs.
  */
 fun ambiguous(candidates: List<ObjectId>, prefix: String, repo: Repository): String {
-    val candidateTuples = candidates.map { oid ->
-        val obj = repo.findObject(oid)
-        val order = when (obj?.kind) {
-            Kind.Tag -> Order.Tag
-            Kind.Commit -> Order.Commit
-            Kind.Tree -> Order.Tree
-            Kind.Blob -> Order.Blob
-            null -> Order.Invalid
-        }
-        Triple(oid, obj, order)
-    }.sortedWith(compareBy<Triple<ObjectId, Object?, Order>> { it.third }.thenBy { it.first })
+    val candidateTuples =
+        candidates
+            .map { oid ->
+                val obj = repo.findObject(oid)
+                val order =
+                    when (obj?.kind) {
+                        Kind.Tag -> Order.Tag
+                        Kind.Commit -> Order.Commit
+                        Kind.Tree -> Order.Tree
+                        Kind.Blob -> Order.Blob
+                        null -> Order.Invalid
+                    }
+                Triple(oid, obj, order)
+            }.sortedWith(compareBy<Triple<ObjectId, Object?, Order>> { it.third }.thenBy { it.first })
 
-    val infoList = candidateTuples.map { (oid, obj, _) ->
-        val info = when (obj?.kind) {
-            Kind.Tree, Kind.Blob -> CandidateInfo.Object(obj.kind)
-            Kind.Tag -> CandidateInfo.Tag(oid.toHex())
-            Kind.Commit -> CandidateInfo.Commit("", oid.toHex())
-            null -> CandidateInfo.FindError("object not found")
+    val infoList =
+        candidateTuples.map { (oid, obj, _) ->
+            val info =
+                when (obj?.kind) {
+                    Kind.Tree, Kind.Blob -> CandidateInfo.Object(obj.kind)
+                    Kind.Tag -> CandidateInfo.Tag(oid.toHex())
+                    Kind.Commit -> CandidateInfo.Commit("", oid.toHex())
+                    null -> CandidateInfo.FindError("object not found")
+                }
+            val shortened = oid.toHex().take(7)
+            "\t$shortened $info"
         }
-        val shortened = oid.toHex().take(7)
-        "\t$shortened $info"
-    }
 
     return "Short id $prefix is ambiguous. Candidates are:\n" + infoList.joinToString("\n")
 }

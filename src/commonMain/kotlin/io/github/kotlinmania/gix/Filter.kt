@@ -29,11 +29,27 @@ object Filter {
      * Error hierarchy for filter pipeline operations.
      */
     sealed class Error {
-        data class Driver(val name: String, val message: String) : Error()
-        data class WorktreeCacheAtPath(val message: String) : Error()
-        data class Convert(val message: String) : Error()
-        data class MissingWorktree(val message: String = "Cannot add worktree files in bare repositories") : Error()
-        data class IO(val path: String, val message: String) : Error()
+        data class Driver(
+            val name: String,
+            val message: String,
+        ) : Error()
+
+        data class WorktreeCacheAtPath(
+            val message: String,
+        ) : Error()
+
+        data class Convert(
+            val message: String,
+        ) : Error()
+
+        data class MissingWorktree(
+            val message: String = "Cannot add worktree files in bare repositories",
+        ) : Error()
+
+        data class IO(
+            val path: String,
+            val message: String,
+        ) : Error()
     }
 
     /**

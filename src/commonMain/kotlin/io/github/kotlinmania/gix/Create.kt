@@ -5,12 +5,32 @@ package io.github.kotlinmania.gix
  * The error used in repository creation.
  */
 sealed class Error {
-    data class CurrentDir(val message: String) : Error()
-    data class IoOpen(val path: String, val message: String) : Error()
-    data class IoWrite(val path: String, val message: String) : Error()
-    data class DirectoryExists(val path: String) : Error()
-    data class DirectoryNotEmpty(val path: String) : Error()
-    data class CreateDirectory(val path: String, val message: String) : Error()
+    data class CurrentDir(
+        val message: String,
+    ) : Error()
+
+    data class IoOpen(
+        val path: String,
+        val message: String,
+    ) : Error()
+
+    data class IoWrite(
+        val path: String,
+        val message: String,
+    ) : Error()
+
+    data class DirectoryExists(
+        val path: String,
+    ) : Error()
+
+    data class DirectoryNotEmpty(
+        val path: String,
+    ) : Error()
+
+    data class CreateDirectory(
+        val path: String,
+        val message: String,
+    ) : Error()
 }
 
 /**

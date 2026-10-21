@@ -22,26 +22,26 @@ data class Commits(
 object Shallow {
     sealed class ReadError(
         val message: String,
-        val cause: Throwable? = null,
+        val cause: String? = null,
     ) {
         class Io(
             message: String,
-            cause: Throwable? = null,
+            cause: String? = null,
         ) : ReadError(message, cause)
 
         class Parse(
             message: String,
-            cause: Throwable? = null,
+            cause: String? = null,
         ) : ReadError(message, cause)
     }
 
     sealed class WriteError(
         val message: String,
-        val cause: Throwable? = null,
+        val cause: String? = null,
     ) {
         class Io(
             message: String,
-            cause: Throwable? = null,
+            cause: String? = null,
         ) : WriteError(message, cause)
     }
 }

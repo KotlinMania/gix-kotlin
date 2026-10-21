@@ -24,7 +24,9 @@ data class Id(
      * Shortening errors.
      */
     sealed class Error {
-        data class NotFound(val oid: ObjectId) : Error()
+        data class NotFound(
+            val oid: ObjectId,
+        ) : Error()
     }
 
     /**

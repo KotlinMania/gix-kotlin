@@ -134,6 +134,10 @@ class Repository(
     fun workdir(): String? = workTree
 
     fun toThreadSafe(): ThreadSafeRepository = ThreadSafeRepository(workTree, gitDir, isBare)
+
+    fun findObject(id: ObjectId): Object? = null
+
+    fun tryFindObject(id: ObjectId): Object? = null
 }
 
 /**
@@ -145,6 +149,14 @@ class ThreadSafeRepository(
     val isBare: Boolean = workTree == null,
 ) {
     fun toThreadLocal(): Repository = Repository(workTree, gitDir, isBare)
+
+    companion object {
+        fun init(directory: String): ThreadSafeRepository =
+            ThreadSafeRepository(workTree = directory, gitDir = "$directory/.git", isBare = false)
+
+        fun initOpts(directory: String): ThreadSafeRepository =
+            ThreadSafeRepository(workTree = directory, gitDir = "$directory/.git", isBare = false)
+    }
 }
 
 /**

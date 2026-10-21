@@ -1,4 +1,3 @@
-// port-lint: source prelude.rs
 package io.github.kotlinmania.gix
 
 /**

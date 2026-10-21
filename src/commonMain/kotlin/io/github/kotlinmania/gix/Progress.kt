@@ -1,4 +1,3 @@
-// port-lint: source progress.rs
 package io.github.kotlinmania.gix
 
 /**

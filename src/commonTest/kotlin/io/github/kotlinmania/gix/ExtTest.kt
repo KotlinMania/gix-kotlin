@@ -1,6 +1,7 @@
-// port-lint: tests ext/object_id.rs ext/reference.rs ext/rev_spec.rs ext/tree.rs
+// port-lint: tests ext/object_id.rs
 package io.github.kotlinmania.gix
 
+import io.github.kotlinmania.gix.ext.ancestors
 import io.github.kotlinmania.gix.ext.attach
 import io.github.kotlinmania.gix.hash.ObjectId
 import io.github.kotlinmania.gix.objs.Entry
@@ -8,6 +9,7 @@ import io.github.kotlinmania.gix.objs.EntryMode
 import io.github.kotlinmania.gix.objs.Tree
 import kotlin.test.Test
 import kotlin.test.assertEquals
+import kotlin.test.assertTrue
 
 class ExtTest {
     @Test
@@ -32,5 +34,14 @@ class ExtTest {
 
         val revSpec = "HEAD~1".attach(repo)
         assertEquals("HEAD~1", revSpec.spec)
+    }
+
+    @Test
+    fun testAncestors() {
+        val oid = ObjectId.fromHex("e69de29bb2d1d6434b8b29ae775ad8c2e48c5391")
+        val iter = oid.ancestors()
+        assertTrue(iter.hasNext())
+        assertEquals(oid, iter.next())
+        assertTrue(!iter.hasNext())
     }
 }

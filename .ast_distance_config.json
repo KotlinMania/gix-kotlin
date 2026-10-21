@@ -76,6 +76,9 @@
     "remote/mod",
     "remote.mod",
     "remote/mod.rs",
-    "gix/src/remote/mod.rs"
+    "gix/src/remote/mod.rs",
+    "progress",
+    "progress.rs",
+    "gix/src/progress.rs"
   ]
 }

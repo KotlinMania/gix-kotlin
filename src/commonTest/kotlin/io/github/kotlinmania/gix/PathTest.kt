@@ -28,4 +28,9 @@ class PathTest {
         assertEquals("/", Path.parent("/a"))
         assertNull(Path.parent("a"))
     }
+
+    @Test
+    fun testInstallDir() {
+        assertNull(Path.installDir())
+    }
 }
